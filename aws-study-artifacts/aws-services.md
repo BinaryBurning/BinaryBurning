@@ -190,3 +190,325 @@ VPC: 10.0.0.0/16
 ├── Private Subnet (AZ1): 10.0.10.0/24 ← For EC2 instances
 ├── Public Subnet (AZ2): 10.0.2.0/24 ← For redundancy
 └── Private Subnet (AZ2): 10.0.11.0/24 ← For redundancy
+
+Amazon Virtual Private Cloud - Amazon VPC is a service to provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.
+
+A subnet is a section of a VPC that can contain resources and is used to organize your resources. They can contain be either public or private.
+
+An internet gateway is a connection between a VPC and the internet. It allows public traffic from the internet to access your VPC.
+
+A virtual private gateway is the component that allows protected internet traffic to enter into the VPC. It allows a connection between your VPC and a private network only if it is coming from an approved network.
+
+Amazon Client VPC is a networking service you can use to connect your remote workers and on-premises networks to the cloud. It is a fully managed, elastic VPN service that automatically scales up or down based on user demand.
+
+AWS Site-to-Site VPN creates a secure connection between your data center or branch offices and your AWS Cloud resources.
+
+AWS PrivateLink is a highly available, scalable technology that you can use to privately connect your VPC to services and resources as though they were in your VPC.
+
+AWS Direct Connect is a service that provides a dedicated private connection between your data center and a VPC.
+
+Network Access Control List A (network ACL) allows or denies specific inbound or outbound traffic at the subnet level using stateless packet filtering.
+
+Security groups control the inbound and outbound traffic for a resource at the instance level using stateful packet filtering.
+
+Domain Name System (DNS) translates human readable domain names to machine readable IP addresses (for example, 192.0.2.0).
+
+Route 53 is a scalable and reliable DNS web service that helps developers and businesses route end users to internet applications, whether they’re hosted in AWS or elsewhere. It also supports domain registration, health checks, and advanced traffic routing policies.
+
+CloudFront is a web service that speeds up distribution of your web content to your users through a worldwide network of data centers called edge locations. It securely delivers content with low latency and high transfer speeds.
+
+Global Accelerator is a networking service that helps improve the availability and performance of applications for global users by routing traffic through the AWS global network. It helps improve application availability, performance, and security.
+
+Amazon VPC Transit Gateways is a network transit hub used to interconnect VPCs and on-premises networks.
+
+Network Address Translation (NAT) gateway allows instances in a private subnet to connect with services outside your VPC. External services can't initiate a connection with those instances.
+
+The Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing APIs at any scale. It handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls.
+
+📦 AWS Storage Services Notes
+🔑 Core Services
+Amazon S3 → Scalable object storage for web assets, backups, and static hosting.
+
+Amazon EBS → Block‑level storage for EC2 instances and databases.
+
+Amazon EFS → Managed shared file system, supports simultaneous access across instances.
+
+🗂️ Amazon S3 Storage Classes
+S3 Standard → High durability, frequent access.
+
+S3 Standard‑IA → Lower cost, infrequent access, still multi‑AZ.
+
+S3 One Zone‑IA → Cheaper, single AZ, infrequent access.
+
+S3 Express One Zone → Ultra‑low latency, single AZ, high‑performance workloads.
+
+S3 Glacier Instant Retrieval → Archival, millisecond retrieval.
+
+S3 Glacier Flexible Retrieval → Archival, minutes to hours retrieval.
+
+S3 Glacier Deep Archive → Lowest cost, retrieval in hours.
+
+S3 Outposts → S3 storage on‑premises for hybrid workloads.
+
+⚙️ S3 Management Features
+S3 Lifecycles → Automates transitions between storage classes.
+
+S3 Storage Class Analysis → Recommends optimal storage class usage.
+
+S3 Intelligent‑Tiering → Automatically moves objects between tiers based on access patterns.
+
+📂 File Systems
+Amazon EFS → Elastic, scalable file storage for Linux workloads.
+
+Amazon FSx for Windows File Server → Native Windows file system support.
+
+Amazon FSx for NetApp ONTAP → Enterprise NAS features, snapshots, replication.
+
+Amazon FSx for OpenZFS → ZFS‑based file system, snapshots, compression.
+
+Amazon FSx for Lustre → High‑performance file system for HPC workloads.
+
+🏠 Hybrid Storage (Storage Gateway)
+S3 File Gateway → Local file interface backed by S3.
+
+Volume Gateway → Block storage volumes backed by S3 snapshots.
+
+Tape Gateway → Virtual tape library for backup apps.
+
+🛡️ Backup & Recovery
+EBS Snapshots → Point‑in‑time backups of EBS volumes.
+
+Amazon Data Lifecycle Manager → Automates snapshot and AMI lifecycle management.
+
+AWS Elastic Disaster Recovery → Replicates workloads for fast recovery during outages.
+
+⚡ Soundbites
+“Amazon S3 is scalable object storage, ideal for backups and static assets.”
+
+“Amazon EBS provides block storage for EC2 and databases.”
+
+“Amazon EFS offers shared file systems for workloads needing simultaneous access.”
+
+Databases
+
+🔄 Migration & Backup
+AWS Database Migration Service (DMS) → Helps migrate databases to AWS with minimal downtime. Supports homogeneous (Oracle → Oracle) and heterogeneous (Oracle → PostgreSQL) migrations.
+
+AWS Backup → Centralized backup service for AWS resources (EBS, RDS, DynamoDB, EFS, FSx). Automates backup policies and compliance.
+
+🗄️ Relational Databases
+Amazon RDS (Relational Database Service) → Managed relational database service. Supports engines like MySQL, PostgreSQL, MariaDB, Oracle, SQL Server. Handles backups, patching, scaling.
+
+Amazon Aurora → High‑performance, MySQL/PostgreSQL‑compatible relational database. Designed for scalability and availability, up to 5x faster than standard MySQL.
+
+⚡ In‑Memory & Caching
+Amazon ElastiCache → Managed in‑memory caching service. Supports Redis and Memcached. Improves application performance by reducing database load.
+
+Amazon DynamoDB Accelerator (DAX) → In‑memory cache for DynamoDB. Provides microsecond latency for read‑intensive workloads.
+
+📑 NoSQL & Specialized Databases
+Amazon DynamoDB → Fully managed NoSQL database. Key‑value and document store. Scales automatically, supports global tables, and integrates with DAX for caching.
+
+Amazon DocumentDB → Managed document database compatible with MongoDB. Ideal for handling complex, semi‑structured data (JSON).
+
+Amazon Neptune → Managed graph database. Optimized for relationships and graph queries. Use cases: social networks, fraud detection, recommendation engines.
+
+🌐 Emerging Tech
+Amazon Managed Blockchain → Fully managed service for creating and managing blockchain networks (Hyperledger Fabric, Ethereum). Enables decentralized applications and ledger systems.
+
+⚡ Soundbites
+“DMS migrates databases with minimal downtime.”
+
+“RDS manages relational engines, while Aurora delivers high performance and scalability.”
+
+“ElastiCache + DAX provide in‑memory acceleration for apps and DynamoDB.”
+
+“DynamoDB is a serverless NoSQL store; DocumentDB handles complex JSON; Neptune powers graph queries.”
+
+“Managed Blockchain supports decentralized applications.”
+
+“AWS Backup centralizes and automates backups across services.”
+
+Mod 8 here!!!
+
+🔐 AWS Security & Management Services Notes
+🛡️ Protection & Defense
+AWS Shield → Managed DDoS protection.
+
+Standard: automatic protection for all AWS customers.
+
+Advanced: extra detection, mitigation, and cost protection.
+
+AWS WAF (Web Application Firewall) → Filters HTTP traffic, blocks common exploits (SQL injection, XSS).
+
+Amazon GuardDuty → Threat detection using logs (VPC Flow, CloudTrail, DNS). Identifies compromised accounts/resources.
+
+Amazon Inspector → Automated vulnerability management for EC2, ECR, Lambda. Scans for CVEs, misconfigurations.
+
+Amazon Detective → Investigates suspicious activity, visualizes relationships between resources, users, and events.
+
+🔑 Data Security & Compliance
+AWS KMS (Key Management Service) → Centralized key creation, rotation, and encryption for AWS services.
+
+Amazon Macie → ML‑powered sensitive data discovery (PII, financial data) in S3.
+
+AWS Certificate Manager (ACM) → Manages SSL/TLS certificates for secure communication.
+
+AWS Security Hub → Centralized security posture dashboard. Aggregates findings from GuardDuty, Inspector, Macie, etc.
+
+👥 Identity & Access
+AWS IAM (Identity and Access Management) → Core service for users, roles, policies.
+
+AWS IAM Identity Center (formerly AWS SSO) → Centralized access management across AWS accounts and apps.
+
+Multi‑Factor Authentication (MFA) → Extra layer of login security.
+
+AWS Organizations → Multi‑account governance, consolidated billing, service control policies.
+
+⚙️ Operations & Management
+AWS Systems Manager → Unified operations hub.
+
+Session Manager: secure shell access without opening ports.
+
+Parameter Store: secure storage for config values and secrets.
+
+Automation: runbooks for patching, updates.
+
+AWS Config → Tracks resource configurations, compliance auditing.
+
+AWS CloudTrail → Logs API calls and user activity for auditing.
+
+Amazon CloudWatch → Metrics, alarms, dashboards for monitoring.
+
+⚡ Soundbites
+“Shield + WAF protect workloads from DDoS and web exploits.”
+
+“GuardDuty, Inspector, Detective form the detection + investigation trio.”
+
+“KMS, Macie, ACM secure data with encryption, discovery, and certificates.”
+
+“IAM + Identity Center enforce least privilege and centralized access.”
+
+“Systems Manager, Config, CloudTrail, CloudWatch keep operations secure and auditable.”
+
+📊 Monitoring & Logging
+Amazon CloudWatch → Collects metrics, logs, and events. Enables alarms, dashboards, and automated responses.
+
+AWS CloudTrail → Records API calls and user activity across AWS accounts. Critical for auditing and security investigations.
+
+📜 Compliance & Governance
+AWS Artifact → On‑demand access to compliance reports, certifications, and agreements (SOC, ISO, PCI).
+
+AWS Compliance Center → Central hub for compliance resources, regulations, and AWS compliance programs.
+
+AWS Risk & Security Whitepaper → Foundational document outlining AWS’s shared responsibility model, risk management, and security practices.
+
+AWS Audit Manager → Automates evidence collection for audits, helps demonstrate compliance with frameworks (e.g., GDPR, HIPAA).
+
+AWS Config → Tracks resource configurations, evaluates compliance against rules, and provides change history.
+
+🏢 Multi‑Account Management
+AWS Organizations → Consolidated billing, multi‑account governance, service control policies (SCPs).
+
+AWS Control Tower → Automates setup of secure multi‑account environments with guardrails and best practices.
+
+📦 Service & Resource Management
+AWS Service Catalog → Lets organizations create and manage approved service portfolios for consistent deployments.
+
+AWS License Manager → Centralized license tracking and enforcement for software across AWS and on‑premises.
+
+🩺 Health & Advisory
+AWS Health Dashboard → Personalized view of AWS service health, outages, and maintenance events affecting your resources.
+
+AWS Trusted Advisor → Real‑time recommendations across five categories:
+
+Cost optimization
+
+Performance
+
+Security
+
+Fault tolerance
+
+Service limits
+
+🔑 Identity & Access
+AWS IAM Access Analyzer → Identifies resources (S3 buckets, IAM roles, KMS keys) shared outside your account. Helps enforce least privilege.
+
+⚡ Soundbites
+“CloudWatch + CloudTrail provide monitoring and auditing visibility.”
+
+“Artifact, Compliance Center, Audit Manager, Config ensure compliance and governance.”
+
+“Organizations + Control Tower manage multi‑account environments securely.”
+
+“Service Catalog + License Manager standardize deployments and track licenses.”
+
+“Health Dashboard + Trusted Advisor give proactive health and optimization insights.”
+
+“IAM Access Analyzer enforces least privilege by detecting unintended resource sharing.”
+
+!!!Not started
+Module 11 - Pricing and Support
+Not started
+Module 12 - Migrating to the AWS Cloud
+
+-
+
+🏛️ AWS Well‑Architected Framework Pillars
+Operational Excellence → Focuses on operations, monitoring, automation, and continuous improvement.
+
+Security → Protects systems and data through least privilege, encryption, and data integrity.
+
+Reliability → Emphasizes recovery planning, fault tolerance, and adaptability to demand changes.
+
+Performance Efficiency → Encourages using the right resources and scaling as needs evolve.
+
+Cost Optimization → Controls and reduces costs via smart provisioning and resource management.
+
+Sustainability → Promotes energy‑efficient design and environmentally conscious resource usage.
+
+👨‍💻 Developer Services
+AWS CodeBuild → Fully managed build service; compiles source code, runs tests, produces artifacts.
+
+AWS CodePipeline → Automates CI/CD pipelines; integrates CodeBuild, CodeDeploy, and third‑party tools.
+
+AWS X‑Ray → Traces requests across distributed applications; helps debug microservices and performance bottlenecks.
+
+AWS AppSync → Managed GraphQL service; simplifies data access across APIs, databases, and microservices.
+
+AWS Amplify → Frontend + mobile app development platform, fullstack development; integrates hosting, authentication, APIs, and storage.
+
+🏢 Business Services
+Amazon Connect → Cloud contact center; enables customer service with voice, chat, and AI integration.
+
+Amazon Simple Email Service (SES) → Scalable email sending service; supports transactional, marketing, and notification emails.
+
+💻 End‑User Computing
+Amazon AppStream 2.0 → Streams desktop applications securely to any device.
+
+Amazon WorkSpaces → Managed virtual desktops in the cloud; supports Windows and Linux.
+
+Amazon WorkSpaces Web → Secure browser‑based access to internal websites and SaaS apps.
+
+🌐 IoT Services
+AWS IoT Core → Connects IoT devices to AWS securely; supports MQTT, HTTP, and WebSockets.
+
+IoT Analytics, IoT Greengrass, IoT Device Defender (important complements):
+
+IoT Analytics: advanced data analysis for IoT device data.
+
+IoT Greengrass: extends AWS services to edge devices.
+
+IoT Device Defender: audits and monitors IoT configurations for security.
+
+⚡ Soundbites
+“The Well‑Architected Framework ensures workloads are secure, reliable, efficient, cost‑optimized, and sustainable.”
+
+“CodeBuild + CodePipeline automate CI/CD, while X‑Ray and AppSync improve debugging and data access.”
+
+“Amazon Connect and SES enable scalable customer communication.”
+
+“AppStream 2.0 and WorkSpaces deliver secure end‑user computing.”
+
+“IoT Core connects devices securely, with Greengrass and Device Defender extending functionality.”
