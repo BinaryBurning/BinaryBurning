@@ -1,1 +1,7 @@
+# Stop on syntax errors
+set -o errexit
+
 export AWS_CLI_AUTO_PROMPT=on-partial
+
+# Auto-load SSH key (edit path as needed)
+ssh-add ~/.ssh/id_ed25519_binaryburning &>/dev/null
