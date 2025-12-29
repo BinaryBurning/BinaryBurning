@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+echo "== delete CFN stack"
+
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/service_code_examples.html#delete-stack-sdk
+
+STACK_NAME="cfn-s3-simple"
+
+aws cloudformation delete-stack \
+--stack-name $STACK_NAME

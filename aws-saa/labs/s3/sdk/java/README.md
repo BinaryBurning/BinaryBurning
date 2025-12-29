@@ -1,3 +1,5 @@
+# for future Java SDK Attempts, refer to aws guide/docs at: https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/get-started.html
+
 ```
 mvn archetype:generate \
 -DgroupId=com.mycompany.app \
