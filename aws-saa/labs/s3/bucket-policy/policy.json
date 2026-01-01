@@ -1,0 +1,15 @@
+{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::1234567890:user/anonymous-user"
+      },
+      "Action": ["s3:ListBucket", "s3:GetObject", "s3:PutObject"],
+      "Resource": [
+        "arn:aws:s3:::bucket-policy-ex-bn-1101",
+        "arn:aws:s3:::bucket-policy-ex-bn-1101/*"
+      ]
+    }
+  ]
+}
