@@ -1,10 +1,13 @@
-# module "vpc" {
-#   source = "./modules/vpc"
+module "vpc" {
+  source = "./modules/vpc"
 
-#   cidr_block      = var.cidr_block
-#   public_subnets  = var.public_subnets
-#   private_subnets = var.private_subnets
-# }
+  cidr_block     = var.cidr_block
+  public_subnets = var.public_subnets
+  # private_subnets = var.private_subnets
+
+  public_azs = var.public_azs
+}
+
 
 module "s3_static" {
   source      = "./modules/s3_static"
@@ -33,6 +36,10 @@ module "cloudfront" {
     Project = "AWS-SAA-Portfolio"
     Owner   = "Bilal"
   }
+
+  depends_on = [
+    module.s3_logs
+  ]
 }
 
 resource "aws_s3_bucket_policy" "static_policy" {
@@ -59,14 +66,3 @@ resource "aws_s3_bucket_policy" "static_policy" {
   })
 }
 
-
-# module "s3" {
-#   source = "./modules/s3"
-# }
-
-# module "compute" {
-#   source = "./modules/compute"
-# }
-
-
-# }

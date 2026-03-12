@@ -6,6 +6,10 @@ variable "public_subnets" {
   type = list(string)
 }
 
-variable "private_subnets" {
+# variable "private_subnets" {
+#   type = list(string)
+# }
+
+variable "public_azs" {
   type = list(string)
 }
